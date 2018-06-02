@@ -2,21 +2,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-5 col-lg-4 d-none d-md-block d-lg-block d-xl-block">
-        <img src="assets/thumb.svg" class="movie-thumb rounded" alt="">
+
+        <img class="movie-thumb rounded"
+             [src]="movie?.poster_path ? imgUrl + movie?.poster_path : 'assets/thumb.svg'"
+             onerror="this.src='assets/thumb.svg'"
+             [alt]="movie?.title">
       </div>
       <div class="col-12 col-md-6 col-lg-8">
         <h1>
-          Deadpool 2
+          {{movie?.title}}
 
           <p class="lead float-right">
             <i class="fas fa-heart"></i>
           </p>
 
-          <p class="lead">(2018)</p>
+          <p class="lead">({{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}})</p>
 
         </h1>
         <p class="lead">
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+          {{movie?.overview}}
         </p>
       </div>
     </div>

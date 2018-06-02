@@ -9,6 +9,18 @@
 .movie-thumb {
   height: 16rem;
   width: 15rem;
+  transition: transform .6s;
+
+  &:hover {
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+}
+
+.media-body a, a:hover {
+  color: #212529 !important;
+  text-decoration: none;
 }
 
 @media (max-width: 576px) {

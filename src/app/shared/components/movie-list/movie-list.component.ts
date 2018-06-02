@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+// Models
+import { Movie } from '../../models/movie';
+
 @Component({
   selector: 'mc-movie-list',
   templateUrl: './movie-list.component.html',
@@ -7,7 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MovieListComponent implements OnInit {
 
-  @Input() movieList: any[] = [0, 1, 2, 3, 4];
+  @Input() movieList: Array<Movie> = [];
+
+  private imgUrl: string = 'https://image.tmdb.org/t/p/w780/';
 
   constructor() { }
 

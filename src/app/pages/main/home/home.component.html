@@ -18,13 +18,11 @@
 
       <div class="row">
 
-        <mc-movie-card class="col-md-4"></mc-movie-card>
-
-        <mc-movie-card class="col-md-4"></mc-movie-card>
-
-        <mc-movie-card class="col-md-4"></mc-movie-card>
-
-        <mc-movie-card class="col-md-4"></mc-movie-card>
+        <mc-movie-card
+          class="col-md-4"
+          *ngFor="let movie of moviesList"
+          [movie]="movie">
+        </mc-movie-card>
 
       </div>
     </div>

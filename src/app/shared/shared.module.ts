@@ -1,12 +1,17 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 // Components
-import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+
+// Services
+import { MoviesService } from './services/movies.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     MovieListComponent
@@ -15,4 +20,13 @@ import { MovieListComponent } from './movie-list/movie-list.component';
     MovieListComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        MoviesService
+      ]
+    };
+  }
+}

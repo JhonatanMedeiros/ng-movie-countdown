@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Movie } from '../../../../shared/models/movie';
 
 @Component({
   selector: 'mc-movie-card',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
+
+  @Input('movie') movie: Movie;
+
+  private imgUrl: string = 'https://image.tmdb.org/t/p/w500/';
 
   constructor() { }
 

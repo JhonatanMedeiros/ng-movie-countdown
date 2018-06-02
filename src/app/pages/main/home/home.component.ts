@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 // Services
 import { MoviesService } from '../../../shared/services/movies.service';
@@ -14,10 +15,12 @@ export class HomeComponent implements OnInit {
   moviesList: Array<Movie> = [];
 
   constructor(
-    private movieService: MoviesService
+    private movieService: MoviesService,
+    private titleService: Title
   ) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Movie Countdown');
     this.getMoviesUpcoming();
   }
 
@@ -28,7 +31,6 @@ export class HomeComponent implements OnInit {
     this.movieService.getMoviesUpcoming()
       .subscribe(
         res => {
-          console.log(res);
           this.moviesList = res.results;
         },
         error => {

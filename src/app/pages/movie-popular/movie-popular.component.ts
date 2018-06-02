@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 // External Libs
 import { BreadcrumbService } from 'ng5-breadcrumb';
@@ -20,13 +21,13 @@ export class MoviePopularComponent implements OnInit {
 
   constructor(
     private movieService: MoviesService,
-    private breadcrumbService: BreadcrumbService
+    private breadcrumbService: BreadcrumbService,
+    private titleService: Title
   ) { }
 
   ngOnInit() {
-
     this.getMoviesPopular();
-
+    this.titleService.setTitle('Filmes Populares');
     this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-popular', 'Filmes Populares');
   }
 
@@ -37,7 +38,6 @@ export class MoviePopularComponent implements OnInit {
     this.movieService.getMoviesPopular()
       .subscribe(
         res => {
-          console.log(res);
           this.movieList = res.results;
         },
         error => {

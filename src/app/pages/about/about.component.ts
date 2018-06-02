@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 // Exteral Libs
 import { BreadcrumbService } from 'ng5-breadcrumb';
@@ -11,10 +12,12 @@ import { BreadcrumbService } from 'ng5-breadcrumb';
 export class AboutComponent implements OnInit {
 
   constructor(
-    private breadcrumbService: BreadcrumbService
+    private breadcrumbService: BreadcrumbService,
+    private titleService: Title
   ) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Sobre');
     this.breadcrumbService.addFriendlyNameForRouteRegex('/about', 'Sobre');
   }
 

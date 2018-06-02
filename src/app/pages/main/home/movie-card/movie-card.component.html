@@ -1,7 +1,7 @@
 <div class="card mb-4 box-shadow">
   <a [routerLink]="['movie-detail/', movie.id]">
     <img class="card-img-top"
-         [src]="imgUrl + movie.poster_path || 'assets/thumb.svg'"
+         [src]="movie.poster_path ? imgUrl + movie.poster_path : 'assets/thumb.svg'"
          onerror="this.src='assets/thumb.svg'"
          [alt]="movie.title"
          [title]="movie.title">

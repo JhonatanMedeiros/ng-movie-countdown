@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 // External Libs
 import { BreadcrumbService } from 'ng5-breadcrumb';
@@ -24,7 +25,8 @@ export class MovieDetailComponent implements OnInit {
   constructor(
     private movieService: MoviesService,
     private router: ActivatedRoute,
-    private breadcrumbService: BreadcrumbService
+    private breadcrumbService: BreadcrumbService,
+    private titleService: Title
   ) { }
 
   ngOnInit() {
@@ -45,6 +47,7 @@ export class MovieDetailComponent implements OnInit {
         res => {
           this.movie = res;
           this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', this.movie.title);
+          this.titleService.setTitle(this.movie.title || this.movie.original_title);
         },
         error => {
           console.log(error);

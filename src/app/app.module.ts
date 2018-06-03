@@ -1,5 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { registerLocaleData } from '@angular/common';
@@ -27,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
 
 // Route Config
 import { APP_ROUTES } from './app.routes';
+import { InputSearchComponent } from './pages/main/header/input-search/input-search.component';
 
 registerLocaleData(localePt, localePtExtra);
 
@@ -39,12 +41,15 @@ registerLocaleData(localePt, localePtExtra);
     MovieCardComponent,
     MoviePopularComponent,
     AboutComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    InputSearchComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule.forRoot(),
     Ng5BreadcrumbModule.forRoot()
   ],

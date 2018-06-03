@@ -7,6 +7,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 
 // Services
 import { MoviesService } from './services/movies.service';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        MoviesService
+        MoviesService,
+        SearchService
       ]
     };
   }

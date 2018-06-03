@@ -1,16 +1,6 @@
 .card-body {
   height: 180px;
 
-  img {
-    transition: transform .6s;
-
-    &:hover {
-      -ms-transform: scale(1.05);
-      transform: scale(1.05);
-    }
-
-  }
-
   .card-title {
     white-space: nowrap;
     overflow: hidden;
@@ -26,6 +16,16 @@
     color: #212529 !important;
     text-decoration: none;
   }
+}
+
+img {
+  transition: transform .6s;
+
+  &:hover {
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
 }
 
 @mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){

@@ -9,3 +9,45 @@
   background-image: radial-gradient(circle at 20% 50%, rgba(18.82%, 14.90%, 12.94%, 0.98) 0%, rgba(18.82%, 14.90%, 12.94%, 0.88) 100%);
   padding: 20px;
 }
+
+.cast-list {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  .cast-item {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+
+    p {
+      padding: 0;
+      font-size: 1em;
+      line-height: 1.4em;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:first-child {
+      background-color: transparent;
+      height: auto;
+      margin-bottom: 0;
+    }
+
+    .people {
+      font-weight: bold;
+    }
+    .job {
+      font-size: 0.9em;
+    }
+  }
+}

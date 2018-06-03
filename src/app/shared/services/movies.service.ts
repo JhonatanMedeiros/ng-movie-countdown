@@ -15,7 +15,11 @@ export class MoviesService {
 
 
   getMovieDetais(id: number): Observable<Movie> {
-    return this.http.get(`/movie/${id}`);
+
+    let params = new HttpParams()
+      .append('append_to_response', 'videos,credits');
+
+    return this.http.get(`/movie/${id}`, { params: params });
   }
 
   getMoviesPopular(page: number = 1): Observable<MovieResponse> {

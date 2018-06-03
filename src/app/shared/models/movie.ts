@@ -13,6 +13,26 @@ export interface Movie {
   vote_count?: number;
   video?: boolean;
   vote_average?: number;
+  videos?: any;
+  credits: MovieCredits;
+}
+
+export interface MovieCredits {
+  cast?: CastProfile[];
+  crew?: CastProfile[];
+}
+
+export interface CastProfile {
+  credit_id?: number;
+  cast_id?: number;
+  character?: string;
+  gender?: number;
+  id?: number;
+  name?: string;
+  order?: number;
+  profile_path?: string;
+  job?: string;
+  department?: string;
 }
 
 export interface MovieResponse {

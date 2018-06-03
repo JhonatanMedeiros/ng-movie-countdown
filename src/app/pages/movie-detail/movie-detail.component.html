@@ -17,7 +17,7 @@
           </p>
 
           <p class="lead">
-            {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}} |
+            Data de lançamento: {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}} |
             <ng-container *ngIf="movie?.release_date">
             {{days + 1 + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
             </ng-container>
@@ -27,6 +27,16 @@
         <p>
           {{movie?.overview}}
         </p>
+
+        <p clpss="lead" style="font-weight: bolder;">
+          Direção
+        </p>
+        <ol class="cast-list">
+          <li class="cast-item" *ngFor="let crew of movieCrewDirectiong">
+            <p class="people">{{crew.name}}</p>
+            <p class="job">{{crew.job}}</p>
+          </li>
+        </ol>
       </div>
     </div>
   </div>

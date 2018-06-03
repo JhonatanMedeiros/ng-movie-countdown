@@ -9,7 +9,7 @@ import { BreadcrumbService } from 'ng5-breadcrumb';
 import { MoviesService } from '../../shared/services/movies.service';
 
 // Models
-import { Movie } from '../../shared/models/movie';
+import { CastProfile, Movie } from '../../shared/models/movie';
 
 @Component({
   selector: 'mc-movie-detail',
@@ -19,6 +19,8 @@ import { Movie } from '../../shared/models/movie';
 export class MovieDetailComponent implements OnInit {
 
   movie: Movie;
+
+  movieCrewDirectiong: Array<CastProfile> = [];
 
   // Countdown Timer
   days: number = 0;
@@ -57,6 +59,7 @@ export class MovieDetailComponent implements OnInit {
           this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', this.movie.title);
           this.titleService.setTitle(this.movie.title || this.movie.original_title);
           this.countdownTimer();
+          this.getMovieCrewDirecting();
         },
         error => {
           console.log(error);
@@ -95,6 +98,14 @@ export class MovieDetailComponent implements OnInit {
 
     }, 1000);
 
+
+  }
+
+  getMovieCrewDirecting(): void {
+
+    this.movieCrewDirectiong = this.movie.credits.crew.filter((value) => {
+      return value.department == 'Directing';
+    });
 
   }
 

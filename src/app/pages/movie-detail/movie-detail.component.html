@@ -16,10 +16,15 @@
             <i class="fas fa-heart"></i>
           </p>
 
-          <p class="lead">({{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}})</p>
+          <p class="lead">
+            {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}} |
+            <ng-container *ngIf="movie?.release_date">
+            {{days + 1 + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
+            </ng-container>
+          </p>
 
         </h1>
-        <p class="lead">
+        <p>
           {{movie?.overview}}
         </p>
       </div>

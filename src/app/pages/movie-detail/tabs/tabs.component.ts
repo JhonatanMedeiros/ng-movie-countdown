@@ -1,4 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+// Models
+import { Movie } from '../../../shared/models/movie';
 
 @Component({
   selector: 'mc-tabs',
@@ -7,16 +10,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
 
-  @ViewChild('myTabs') myTabs: ElementRef;
-
-  tabSelected: number = 0;
-
-  tabList: Array<string> = [
-    'Informações',
-    'Elenco',
-    'Videos',
-    'Fotos'
-  ];
+  @Input('movie') movie: Movie;
 
   constructor() { }
 

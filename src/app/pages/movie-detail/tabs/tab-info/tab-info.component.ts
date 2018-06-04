@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+// Models
+import { Movie } from '../../../../shared/models/movie';
 
 @Component({
   selector: 'mc-tab-info',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab-info.component.scss']
 })
 export class TabInfoComponent implements OnInit {
+
+  @Input('movie') movie: Movie;
 
   constructor() { }
 

@@ -9,27 +9,31 @@
              [alt]="movie?.title">
       </div>
       <div class="col-12 col-md-6 col-lg-8">
-        <h1>
-          {{movie?.title}}
-
-          <p class="lead float-right">
+        <h1> {{movie?.title}}
+          <span class="lead float-right">
             <i class="material-icons">favorite</i>
-          </p>
-
-          <p class="lead">
-            Data de lançamento: {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}} |
-            <ng-container *ngIf="movie?.release_date">
-            {{days + 1 + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
-            </ng-container>
-          </p>
-
+          </span>
         </h1>
+
+        <p>
+          <b>Data de lançamento:</b> {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}}
+        </p>
+
+        <p *ngIf="movie?.release_date">
+          <b>Tempo para estréia:</b>
+          {{days + 1 + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
+        </p>
+
+        <p>
+          <b>Sinopse</b>
+        </p>
+
         <p>
           {{movie?.overview}}
         </p>
 
-        <p clpss="lead" style="font-weight: bolder;">
-          Direção
+        <p>
+          <b>Direção</b>
         </p>
         <ol class="cast-list">
           <li class="cast-item" *ngFor="let crew of movieCrewDirectiong">
@@ -37,6 +41,7 @@
             <p class="job">{{crew.job}}</p>
           </li>
         </ol>
+
       </div>
     </div>
   </div>
@@ -44,6 +49,6 @@
 
 <div style="background-color: #ecf0f5;padding-top: 20px;padding-bottom: 20px">
   <div class="container">
-    <mc-tabs></mc-tabs>
+    <mc-tabs [movie]="movie"></mc-tabs>
   </div>
 </div>

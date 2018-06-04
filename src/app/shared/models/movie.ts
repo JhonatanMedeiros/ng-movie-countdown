@@ -1,20 +1,33 @@
 export interface Movie {
-  poster_path?: string;
   adult?: boolean;
-  overview?: string;
-  release_date?: string;
-  genre_ids?: Array<number>;
-  id?: number;
-  original_title?: string;
-  original_language?: string;
-  title?: string;
   backdrop_path?: string;
-  popularity?: number;
-  vote_count?: number;
-  video?: boolean;
-  vote_average?: number;
-  videos?: any;
+  belongs_to_collection?: any;
+  budget?: number;
   credits?: MovieCredits;
+  external_ids?: MovieExternalIDS;
+  genres?: MovieGenres[];
+  genre_ids?: Array<number>;
+  homepage?: string;
+  id?: number;
+  imdb_id?: string;
+  original_language?: string;
+  original_title?: string;
+  overview?: string;
+  popularity?: number;
+  poster_path?: string;
+  production_companies?: any[];
+  production_countries?: any[];
+  release_date?: string;
+  revenue?: number;
+  runtime?: number;
+  spoken_languages?: any[];
+  status?: string;
+  tagline?: string;
+  title?: string;
+  video?: boolean;
+  videos?: any;
+  vote_count?: number;
+  vote_average?: number;
 }
 
 export interface MovieCredits {
@@ -33,6 +46,18 @@ export interface CastProfile {
   profile_path?: string;
   job?: string;
   department?: string;
+}
+
+export interface MovieGenres {
+  id?: number;
+  name?: string;
+}
+
+export interface MovieExternalIDS {
+  imdb_id?: string;
+  facebook_id?: string;
+  instagram_id?: string;
+  twitter_id?: string;
 }
 
 export interface MovieResponse {

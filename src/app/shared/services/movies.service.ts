@@ -14,10 +14,10 @@ export class MoviesService {
   ) { }
 
 
-  getMovieDetais(id: number): Observable<Movie> {
+  getMovieDetails(id: number): Observable<Movie> {
 
     let params = new HttpParams()
-      .append('append_to_response', 'videos,credits');
+      .append('append_to_response', 'videos,credits,external_ids');
 
     return this.http.get(`/movie/${id}`, { params: params });
   }

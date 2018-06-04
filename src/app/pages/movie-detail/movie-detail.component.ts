@@ -55,7 +55,7 @@ export class MovieDetailComponent implements OnInit {
 
     this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', 'Carregando Filme...');
 
-    this.movieService.getMovieDetais(movieId)
+    this.movieService.getMovieDetails(movieId)
       .subscribe(
         res => {
           this.movie = res;

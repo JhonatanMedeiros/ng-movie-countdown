@@ -19,6 +19,7 @@
 }
 
 img {
+  height: 500px;
   transition: transform .6s;
 
   &:hover {
@@ -54,6 +55,6 @@ img {
 }
 
 .block-with-text {
-  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+  @include multiLineEllipsis($lineHeight: 1.01em, $lineCount: 7, $bgColor: white);
 }
 

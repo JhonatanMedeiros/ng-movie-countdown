@@ -3,6 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 // Models
 import { Movie } from '../../models/movie';
 
+// Env
+import { environment } from '../../../../environments/environment';
+
 @Component({
   selector: 'mc-movie-list',
   templateUrl: './movie-list.component.html',
@@ -12,7 +15,7 @@ export class MovieListComponent implements OnInit {
 
   @Input() movieList: Array<Movie> = [];
 
-  private imgUrl: string = 'https://image.tmdb.org/t/p/w780/';
+  imgUrl: string = environment.imgSizesUrl.w780;
 
   constructor() { }
 

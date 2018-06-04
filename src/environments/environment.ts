@@ -2,12 +2,19 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+const apiImgUrl = 'https://image.tmdb.org/t/p/';
+
 export const environment = {
   production: false,
   apiUrl: `https://api.themoviedb.org/3`,
   apiKey: 'API_HERE',
   apiLanguage: 'pt-BR',
-  apiRegion: 'BR'
+  apiRegion: 'BR',
+  imgSizesUrl: {
+    w500: `${apiImgUrl}w500/`,
+    w780: `${apiImgUrl}w780/`
+  }
 };
 
 /*

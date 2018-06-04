@@ -19,6 +19,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { MovieCardComponent } from './pages/main/home/movie-card/movie-card.component';
 import { MoviePopularComponent } from './pages/movie-popular/movie-popular.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { InputSearchComponent } from './pages/main/header/input-search/input-search.component';
+import { TabsComponent } from './pages/movie-detail/tabs/tabs.component';
+import { TabInfoComponent } from './pages/movie-detail/tabs/tab-info/tab-info.component';
 
 // Services
 import { HttpInterceptorService } from './shared/services/local/http-interceptor.service';
@@ -28,7 +31,6 @@ import { SharedModule } from './shared/shared.module';
 
 // Route Config
 import { APP_ROUTES } from './app.routes';
-import { InputSearchComponent } from './pages/main/header/input-search/input-search.component';
 
 registerLocaleData(localePt, localePtExtra);
 
@@ -42,7 +44,9 @@ registerLocaleData(localePt, localePtExtra);
     MoviePopularComponent,
     AboutComponent,
     MovieDetailComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    TabsComponent,
+    TabInfoComponent
   ],
   imports: [
     BrowserModule,

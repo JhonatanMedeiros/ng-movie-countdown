@@ -15,7 +15,7 @@
     <p class="card-text block-with-text">
       <a [routerLink]="['movie-detail/', movie.id]">{{movie.overview}}</a>
     </p>
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center" *ngIf="false">
       <div class="btn-group">
         <a class="btn btn-sm btn-outline-secondary"
            role="button" [routerLink]="['movie-detail/', movie.id]">
@@ -28,6 +28,12 @@
       <small class="text-muted" [title]="movie.release_date | date:'dd MMMM yyyy':'':'pt'">
         {{movie.release_date | date:'dd MMM yyyy':'':'pt'}}
       </small>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <a [routerLink]="['movie-detail/', movie.id]" class="btn btn-default btn-sm" role="button" aria-disabled="true">Detalhes</a>
+    <div class="stats ml-auto" [title]="movie.release_date | date:'dd MMMM yyyy':'':'pt'">
+      {{movie.release_date | date:'dd MMM yyyy':'':'pt'}}
     </div>
   </div>
 </div>

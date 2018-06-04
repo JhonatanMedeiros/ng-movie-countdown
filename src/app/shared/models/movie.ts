@@ -14,7 +14,7 @@ export interface Movie {
   video?: boolean;
   vote_average?: number;
   videos?: any;
-  credits: MovieCredits;
+  credits?: MovieCredits;
 }
 
 export interface MovieCredits {

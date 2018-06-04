@@ -46,12 +46,12 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "src/assets/material-kit/js/bootstrap-material-design.min.js",
+              "src/assets/material-kit/js/material-kit.min.js"
             ]
           },
           "configurations": {

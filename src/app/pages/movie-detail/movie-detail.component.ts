@@ -11,6 +11,9 @@ import { MoviesService } from '../../shared/services/movies.service';
 // Models
 import { CastProfile, Movie } from '../../shared/models/movie';
 
+// Env
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'mc-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -28,7 +31,7 @@ export class MovieDetailComponent implements OnInit {
   minutes: number = 0;
   seconds: number = 0;
 
-  private imgUrl: string = 'https://image.tmdb.org/t/p/w780/';
+  imgUrl: string = environment.imgSizesUrl.w780;
 
   constructor(
     private movieService: MoviesService,

@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+// Models
 import { Movie } from '../../../../shared/models/movie';
+
+// Env
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'mc-movie-card',
@@ -11,7 +15,7 @@ export class MovieCardComponent implements OnInit {
 
   @Input('movie') movie: Movie;
 
-  private imgUrl: string = 'https://image.tmdb.org/t/p/w500/';
+  imgUrl: string = environment.imgSizesUrl.w500;
 
   constructor() { }
 

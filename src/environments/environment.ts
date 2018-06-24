@@ -13,7 +13,12 @@ export const environment = {
   apiRegion: 'BR',
   imgSizesUrl: {
     w500: `${apiImgUrl}w500/`,
-    w780: `${apiImgUrl}w780/`
+    w780: `${apiImgUrl}w780/`,
+    profile_sizes: {
+      w45: `${apiImgUrl}w45`,
+      w185: `${apiImgUrl}w185`,
+      h632: `${apiImgUrl}w632`
+    }
   }
 };
 

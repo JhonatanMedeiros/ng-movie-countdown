@@ -32,7 +32,7 @@ export class MovieDetailComponent implements OnInit {
   minutes: number = 0;
   seconds: number = 0;
 
-  imgUrl: string = environment.imgSizesUrl.w780;
+  imgUrl: string = environment.imgSizesUrl.poster_sizes.w342;
 
   isLoadingMovie: boolean = false;
 

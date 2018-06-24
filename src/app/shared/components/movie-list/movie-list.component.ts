@@ -15,7 +15,7 @@ export class MovieListComponent implements OnInit {
 
   @Input() movieList: Array<Movie> = [];
 
-  imgUrl: string = environment.imgSizesUrl.w780;
+  imgUrl: string = environment.imgSizesUrl.poster_sizes.w342;
 
   constructor() { }
 

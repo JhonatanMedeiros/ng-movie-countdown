@@ -15,7 +15,7 @@ export class MovieCardComponent implements OnInit {
 
   @Input('movie') movie: Movie;
 
-  imgUrl: string = environment.imgSizesUrl.w500;
+  imgUrl: string = environment.imgSizesUrl.poster_sizes.w342;
 
   constructor() { }
 

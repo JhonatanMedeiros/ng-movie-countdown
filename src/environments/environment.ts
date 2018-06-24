@@ -41,7 +41,7 @@ export const environment = {
     still_sizes: {
       w92: `${apiImgUrl}w92`,
       w185: `${apiImgUrl}w185`,
-      w185: `${apiImgUrl}w185`
+      w300: `${apiImgUrl}w300`
     }
   }
 };

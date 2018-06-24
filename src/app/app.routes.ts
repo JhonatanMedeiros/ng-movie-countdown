@@ -5,6 +5,9 @@ import { HomeComponent } from './pages/main/home/home.component';
 import { MoviePopularComponent } from './pages/movie-popular/movie-popular.component';
 import { AboutComponent } from './pages/about/about.component';
 
+// Modules
+import { MovieDetailModule } from './pages/movie-detail/movie-detail.module';
+
 export const APP_ROUTES: Routes = [
   {
     path: 'home',
@@ -12,7 +15,7 @@ export const APP_ROUTES: Routes = [
       { path: '', component: HomeComponent  },
       { path: 'about', component: AboutComponent  },
       { path: 'movie-popular', component: MoviePopularComponent },
-      { path: 'movie-detail',  loadChildren: './pages/movie-detail/movie-detail.module#MovieDetailModule' }
+      { path: 'movie-detail', loadChildren: () => MovieDetailModule}
     ]
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full'}

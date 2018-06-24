@@ -65,6 +65,7 @@ export class MovieDetailComponent implements OnInit {
       .subscribe(
         res => {
           this.movie = res;
+          // console.log(res);
           this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', this.movie.title);
           this.titleService.setTitle(this.movie.title || this.movie.original_title);
           this.countdownTimer();

@@ -8,6 +8,10 @@ import { MovieDetailComponent } from './movie-detail.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabInfoComponent } from './tabs/tab-info/tab-info.component';
 import { TabCastComponent } from './tabs/tab-cast/tab-cast.component';
+import { TabVideosComponent } from './tabs/tab-videos/tab-videos.component';
+
+// Pipes
+import { SafePipe } from '../../shared/pipes/safe.pipe';
 
 const APP_ROUTES: Routes = [
   {
@@ -20,13 +24,15 @@ const APP_ROUTES: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(APP_ROUTES)
+    RouterModule.forChild(APP_ROUTES),
   ],
   declarations: [
+    SafePipe,
     MovieDetailComponent,
     TabsComponent,
     TabInfoComponent,
-    TabCastComponent
+    TabCastComponent,
+    TabVideosComponent
   ]
 })
 export class MovieDetailModule { }

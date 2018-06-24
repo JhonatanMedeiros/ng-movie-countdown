@@ -28,7 +28,7 @@ export class Movie {
   tagline?: string;
   title?: string;
   video?: boolean;
-  videos?: any;
+  videos?: { id?: number, results?: Array<MovieVideos> };
   vote_count?: number;
   vote_average?: number;
 
@@ -38,6 +38,7 @@ export class Movie {
   ) {
     Object.assign(this, values);
     this.getLanguages();
+    this.parseVideoUrl();
   }
 
   private getLanguages(): void {
@@ -56,6 +57,26 @@ export class Movie {
     }
   }
 
+  private parseVideoUrl(): void {
+    if (this.videos.results) {
+      this.videos.results.forEach((value: MovieVideos) => {
+        switch (value.site) {
+          case MovieVideoSite.YouTube: {
+            value.url = 'https://www.youtube.com/embed/' + value.key;
+           break;
+          }
+        }
+      });
+    }
+  }
+
+}
+
+export interface IMovieResponse {
+  page?: number;
+  results?: Array<Movie>;
+  total_results?: number;
+  total_pages?: number;
 }
 
 export interface IMovieCredits {
@@ -88,17 +109,33 @@ export interface IMovieExternalIDS {
   twitter_id?: string;
 }
 
-export interface IMovieResponse {
-  page?: number;
-  results?: Array<Movie>;
-  total_results?: number;
-  total_pages?: number;
-}
-
 export interface ISpokenLanguages {
   iso_639_1?: string;
   name?: string;
   english_name?: string;
+}
+
+export interface MovieVideos {
+  id?: string;
+  iso_639_1?: string;
+  iso_3166_1?: string;
+  key?: string;
+  name?: string;
+  site?: MovieVideoSite;
+  size?: number;
+  type?: MovieVideoType;
+  url?: any;
+}
+
+export enum MovieVideoSite {
+  YouTube = 'YouTube'
+}
+
+export enum MovieVideoType {
+  Trailer = 'Trailer',
+  Teaser = 'Teaser',
+  Clip = 'Clip',
+  Featurette = 'Featurette'
 }
 
 export enum EnumMovieStatus {

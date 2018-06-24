@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Models
-import { MovieResponse } from '../models/movie';
+import { IMovieResponse } from '../models/movie';
 
 @Injectable()
 export class SearchService {
@@ -12,7 +12,7 @@ export class SearchService {
     private http: HttpClient
   ) { }
 
-  searchMovie(query: string): Observable<MovieResponse> {
+  searchMovie(query: string): Observable<IMovieResponse> {
 
     const options = query ? { params: new HttpParams().set('query', query) } : {};
 

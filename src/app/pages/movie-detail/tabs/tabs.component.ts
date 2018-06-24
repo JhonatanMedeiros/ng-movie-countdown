@@ -10,7 +10,7 @@ import { Movie } from '../../../shared/models/movie';
 })
 export class TabsComponent implements OnInit {
 
-  @Input('movie') movie: Movie;
+  @Input('movie') movie: Movie = undefined;
 
   constructor() { }
 

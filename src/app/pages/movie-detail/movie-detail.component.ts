@@ -7,9 +7,10 @@ import { BreadcrumbService } from 'ng5-breadcrumb';
 
 // Services
 import { MoviesService } from '../../shared/services/movies.service';
+import { LogService } from '../../shared/services/local/log.service';
 
 // Models
-import { CastProfile, Movie } from '../../shared/models/movie';
+import { ICastProfile, Movie } from '../../shared/models/movie';
 
 // Env
 import { environment } from '../../../environments/environment';
@@ -21,9 +22,9 @@ import { environment } from '../../../environments/environment';
 })
 export class MovieDetailComponent implements OnInit {
 
-  movie: Movie;
+  movie: Movie = undefined;
 
-  movieCrewDirectiong: Array<CastProfile> = [];
+  movieCrewDirectiong: Array<ICastProfile> = [];
 
   // Countdown Timer
   days: number = 0;
@@ -33,11 +34,14 @@ export class MovieDetailComponent implements OnInit {
 
   imgUrl: string = environment.imgSizesUrl.w780;
 
+  isLoadingMovie: boolean = false;
+
   constructor(
     private movieService: MoviesService,
     private router: ActivatedRoute,
     private breadcrumbService: BreadcrumbService,
-    private titleService: Title
+    private titleService: Title,
+    private logService: LogService
   ) { }
 
   ngOnInit() {
@@ -53,6 +57,8 @@ export class MovieDetailComponent implements OnInit {
    */
   getMovieDetail(movieId: number): void {
 
+    this.isLoadingMovie = true;
+
     this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', 'Carregando Filme...');
 
     this.movieService.getMovieDetails(movieId)
@@ -65,9 +71,11 @@ export class MovieDetailComponent implements OnInit {
           this.getMovieCrewDirecting();
         },
         error => {
-          console.log(error);
+          this.logService.error('getMovieDetail', error);
+        },
+        () => {
+          this.isLoadingMovie = false;
         });
-
   }
 
   /**
@@ -75,14 +83,14 @@ export class MovieDetailComponent implements OnInit {
    */
   countdownTimer(): void {
 
-    let x = setInterval(() => {
+    const x = setInterval(() => {
 
       // Get todays date and time
-      let now = new Date().getTime();
-      let countDownDate = new Date(this.movie.release_date);
+      const now = new Date().getTime();
+      const countDownDate = new Date(this.movie.release_date);
 
       // Find the distance between now an the count down date
-      let distance = Number(countDownDate) - now;
+      const distance = Number(countDownDate) - now;
 
       // Time calculations for days, hours, minutes and seconds
       this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -101,13 +109,12 @@ export class MovieDetailComponent implements OnInit {
 
     }, 1000);
 
-
   }
 
   getMovieCrewDirecting(): void {
 
     this.movieCrewDirectiong = this.movie.credits.crew.filter((value) => {
-      return value.department == 'Directing';
+      return value.department === 'Directing';
     });
 
   }

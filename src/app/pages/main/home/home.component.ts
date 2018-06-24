@@ -3,6 +3,8 @@ import { Title } from '@angular/platform-browser';
 
 // Services
 import { MoviesService } from '../../../shared/services/movies.service';
+
+// Models
 import { Movie } from '../../../shared/models/movie';
 
 @Component({

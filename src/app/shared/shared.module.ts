@@ -8,6 +8,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 // Services
 import { MoviesService } from './services/movies.service';
 import { SearchService } from './services/search.service';
+import { ConfigurationService } from './services/configuration.service';
+import { LogService } from './services/local/log.service';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ export class SharedModule {
       ngModule: SharedModule,
       providers: [
         MoviesService,
-        SearchService
+        SearchService,
+        ConfigurationService,
+        LogService
       ]
     };
   }

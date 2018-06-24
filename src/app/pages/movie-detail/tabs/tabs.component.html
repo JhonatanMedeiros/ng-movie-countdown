@@ -36,7 +36,7 @@
   </div><div class="card-body ">
   <div class="tab-content text-center">
     <div class="tab-pane active show" id="info">
-      <mc-tab-info [movie]="movie"></mc-tab-info>
+      <mc-tab-info *ngIf="movie !== undefined" [movie]="movie"></mc-tab-info>
     </div>
     <div class="tab-pane" id="credits">
       <div class="row">

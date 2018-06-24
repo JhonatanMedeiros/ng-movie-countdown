@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -8,7 +9,6 @@ import { SearchService } from '../../../../shared/services/search.service';
 
 // Models
 import { Movie } from '../../../../shared/models/movie';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'mc-input-search',

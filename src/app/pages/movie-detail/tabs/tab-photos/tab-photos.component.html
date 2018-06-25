@@ -1,0 +1,33 @@
+<div class="row" *ngIf="movie.images?.posters">
+  <div class="col-12">
+    <h3>Pôsteres ({{movie.images.posters.length}})</h3>
+  </div>
+  <ng-container *ngFor="let poster of movie.images.posters">
+    <div class="col-6 col-lg-2">
+      <img
+        [src]="poster.file_path ? imgPosterUrl + poster.file_path : '/assets/thumb.svg'"
+        class="img-thumbnail"
+        [alt]="movie.original_title"
+      >
+    </div>
+  </ng-container>
+</div>
+
+<div class="row" *ngIf="movie.images?.backdrops">
+  <div class="col-12">
+    <h3>Plano de Fundo ({{movie.images.backdrops.length}})</h3>
+  </div>
+  <ng-container *ngFor="let poster of movie.images.backdrops">
+    <div class="col-6 col-lg-4">
+      <img
+        [src]="poster.file_path ? imgPosterUrl + poster.file_path : '/assets/thumb.svg'"
+        class="img-thumbnail"
+        [alt]="movie.original_title"
+      >
+    </div>
+  </ng-container>
+</div>
+
+<ng-container *ngIf="!movie.images?.backdrops && !movie.images?.posters">
+  <h4>Não Existem Fotos :(</h4>
+</ng-container>

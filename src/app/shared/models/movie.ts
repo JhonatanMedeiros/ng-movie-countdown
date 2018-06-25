@@ -12,6 +12,7 @@ export class Movie {
   genre_ids?: Array<number>;
   homepage?: string;
   id?: number;
+  images?: IMovieImages;
   imdb_id?: string;
   original_language?: string;
   original_title?: string;
@@ -125,6 +126,22 @@ export interface MovieVideos {
   size?: number;
   type?: MovieVideoType;
   url?: any;
+}
+
+export interface IMovieImages {
+  id?: number;
+  backdrops?: IMovieImage[];
+  posters?: IMovieImage[];
+}
+
+export interface IMovieImage {
+  aspect_ratio?: number;
+  file_path?: string;
+  height?: number;
+  iso_639_1?: null | string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
 }
 
 export enum MovieVideoSite {

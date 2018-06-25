@@ -9,6 +9,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TabInfoComponent } from './tabs/tab-info/tab-info.component';
 import { TabCastComponent } from './tabs/tab-cast/tab-cast.component';
 import { TabVideosComponent } from './tabs/tab-videos/tab-videos.component';
+import { TabPhotosComponent } from './tabs/tab-photos/tab-photos.component';
 
 // Pipes
 import { SafePipe } from '../../shared/pipes/safe.pipe';
@@ -32,7 +33,8 @@ const APP_ROUTES: Routes = [
     TabsComponent,
     TabInfoComponent,
     TabCastComponent,
-    TabVideosComponent
+    TabVideosComponent,
+    TabPhotosComponent
   ]
 })
 export class MovieDetailModule { }

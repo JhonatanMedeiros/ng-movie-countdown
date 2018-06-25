@@ -13,7 +13,7 @@ export class HttpInterceptorService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const params = new HttpParams()
+    let params = new HttpParams()
       .append('api_key', environment.apiKey);
 
     request = request.clone({

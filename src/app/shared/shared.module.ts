@@ -1,15 +1,17 @@
+// Angular Imports
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // Components
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 // Services
 import { MoviesService } from './services/movies.service';
 import { SearchService } from './services/search.service';
 import { ConfigurationService } from './services/configuration.service';
 import { LogService } from './services/local/log.service';
+import { PaginationConfig } from './components/pagination/pagination.config';
 
 @NgModule({
   imports: [
@@ -17,10 +19,10 @@ import { LogService } from './services/local/log.service';
     RouterModule
   ],
   declarations: [
-    MovieListComponent
+    PaginationComponent
   ],
   exports: [
-    MovieListComponent
+    PaginationComponent
   ]
 })
 export class SharedModule {
@@ -31,7 +33,8 @@ export class SharedModule {
         MoviesService,
         SearchService,
         ConfigurationService,
-        LogService
+        LogService,
+        PaginationConfig
       ]
     };
   }

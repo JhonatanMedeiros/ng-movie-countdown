@@ -39,27 +39,24 @@ export class MoviesService {
     return this.http.get<IMovieImages>(`/movie/${id}/images`);
   }
 
-  getMoviesPopular(page: number = 1): Observable<IMovieResponse> {
+  getMoviesPopular(page?: number): Observable<IMovieResponse> {
 
-    const params = new HttpParams()
+    let params = new HttpParams()
       .append('region', environment.apiRegion)
-      .append('language', environment.apiLanguage);
+      .append('language', environment.apiLanguage)
+      .append('page', page.toString());
 
-    if (page) {
-      params.append('page', page.toString());
-    }
-
-    return this.http.get<IMovieResponse>(`/movie/popular`, { params: params});
+    return this.http.get(`/movie/popular`, { params: params});
   }
 
-  getMoviesUpcoming(page: number = 1): Observable<IMovieResponse> {
+  getMoviesUpcoming(page?: number): Observable<IMovieResponse> {
 
-    const params = new HttpParams()
+    let params = new HttpParams()
       .append('region', environment.apiRegion)
       .append('language', environment.apiLanguage);
 
     if (page) {
-      params.append('page', page.toString());
+      params.set('page', page.toString());
     }
 
     return this.http.get<IMovieResponse>('/movie/upcoming', { params: params });

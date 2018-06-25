@@ -10,7 +10,7 @@ import { MoviesService } from '../../shared/services/movies.service';
 import { LogService } from '../../shared/services/local/log.service';
 
 // Models
-import { ICastProfile, Movie } from '../../shared/models/movie';
+import { EnumMovieStatus, ICastProfile, Movie } from '../../shared/models/movie';
 
 // Env
 import { environment } from '../../../environments/environment';
@@ -31,6 +31,7 @@ export class MovieDetailComponent implements OnInit {
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
+  showCountDown: boolean = true;
 
   imgUrl: string = environment.imgSizesUrl.poster_sizes.w342;
 
@@ -47,7 +48,7 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
 
     this.router.params.subscribe(params => {
-      let movieId = Number(params['id']);
+      const movieId: number = Number(params['id']);
       this.getMovieDetail(movieId);
     });
   }
@@ -65,7 +66,6 @@ export class MovieDetailComponent implements OnInit {
       .subscribe(
         res => {
           this.movie = res;
-          // console.log(res);
           this.breadcrumbService.addFriendlyNameForRouteRegex('/movie-detail/[0-9]', this.movie.title);
           this.titleService.setTitle(this.movie.title || this.movie.original_title);
           this.countdownTimer();
@@ -83,6 +83,13 @@ export class MovieDetailComponent implements OnInit {
    * Functions
    */
   countdownTimer(): void {
+
+    if (this.movie.status === EnumMovieStatus.Released) {
+      this.showCountDown = false;
+      return;
+    }
+
+    this.movie.release_date = this.formatDate(this.movie.release_date);
 
     const x = setInterval(() => {
 
@@ -110,6 +117,22 @@ export class MovieDetailComponent implements OnInit {
 
     }, 1000);
 
+  }
+
+  formatDate(date): string {
+    let d = new Date(date);
+    let month = '' + (d.getMonth() + 1);
+    let day = '' + d.getDate();
+    let year = d.getFullYear();
+
+    if (month.length < 2) {
+      month = '0' + month;
+    }
+    if (day.length < 2) {
+      day = '0' + day;
+    }
+
+    return [year, month, day].join('-');
   }
 
   getMovieCrewDirecting(): void {

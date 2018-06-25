@@ -19,9 +19,9 @@
           <b>Data de lançamento:</b> {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}}
         </p>
 
-        <p *ngIf="movie?.release_date">
+        <p *ngIf="showCountDown">
           <b>Tempo para estréia:</b>
-          {{days + 1 + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
+          {{days + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
         </p>
 
         <p>
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div style="background-color: #ecf0f5;padding-top: 20px;padding-bottom: 20px">
+<div class="tabs-container">
   <div class="container">
     <mc-tabs [movie]="movie"></mc-tabs>
   </div>

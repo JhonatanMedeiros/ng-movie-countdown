@@ -25,7 +25,7 @@ export class Movie {
   revenue?: number;
   runtime?: number;
   spoken_languages?: Array<ISpokenLanguages>;
-  status?: string;
+  status?: EnumMovieStatus;
   tagline?: string;
   title?: string;
   video?: boolean;

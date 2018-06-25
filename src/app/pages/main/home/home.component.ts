@@ -1,8 +1,10 @@
+// Angular Imports
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 // Services
 import { MoviesService } from '../../../shared/services/movies.service';
+import { LogService } from '../../../shared/services/local/log.service';
 
 // Models
 import { Movie } from '../../../shared/models/movie';
@@ -18,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private movieService: MoviesService,
+    private logService: LogService,
     private titleService: Title
   ) { }
 
@@ -36,7 +39,7 @@ export class HomeComponent implements OnInit {
           this.moviesList = res.results;
         },
         error => {
-          console.log(error);
+          this.logService.error('getMoviesUpcoming', error);
         }
       );
   }

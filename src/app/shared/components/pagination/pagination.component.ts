@@ -6,7 +6,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PaginationConfig } from './pagination.config';
 
 // Models
-import { PageChangedEvent } from './page';
+import { PageChangedEvent } from './PageChangedEvent';
 
 export const PAGINATION_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,

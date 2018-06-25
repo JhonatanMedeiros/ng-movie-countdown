@@ -85,10 +85,10 @@ export class InputSearchComponent implements OnInit, OnDestroy {
   }
 
   inputKeyDown(e: KeyboardEvent): void {
-    if (this.movieResults.length == 0 && !this.showList) { return; }
+    if (this.movieResults.length === 0 && !this.showList) { return; }
     let x = this.autocompleteList.nativeElement;
     if (x) { x = x.getElementsByTagName('div'); }
-    if (e.keyCode == 40) {
+    if (e.keyCode === 40) {
       this.currentFocus++;
       this.addActive(x);
     } else if (e.keyCode == 38) {

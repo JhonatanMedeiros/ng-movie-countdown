@@ -29,6 +29,8 @@ import { SharedModule } from './shared/shared.module';
 
 // Route Config
 import { APP_ROUTES } from './app.routes';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localePt, localePtExtra);
 
@@ -50,7 +52,8 @@ registerLocaleData(localePt, localePtExtra);
     FormsModule,
     ReactiveFormsModule,
     Ng5BreadcrumbModule.forRoot(),
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     BreadcrumbService,

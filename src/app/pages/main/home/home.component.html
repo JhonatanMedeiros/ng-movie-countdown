@@ -23,13 +23,22 @@
 
       <div class="row">
 
-        <mc-movie-card
-          class="col-md-4"
-          *ngFor="let movie of moviesList"
-          [movie]="movie">
-        </mc-movie-card>
+        <ng-container *ngIf="!isLoading">
+          <mc-movie-card
+            class="col-md-4"
+            *ngFor="let movie of moviesList"
+            [movie]="movie">
+          </mc-movie-card>
+        </ng-container>
 
       </div>
+
+      <div class="row loader">
+        <ng-container *ngIf="isLoading">
+          <mc-loader></mc-loader>
+        </ng-container>
+      </div>
+
     </div>
   </div>
 

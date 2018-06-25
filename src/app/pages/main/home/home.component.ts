@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
 
   moviesList: Array<Movie> = [];
 
+  isLoading: boolean = false;
+
   constructor(
     private movieService: MoviesService,
     private logService: LogService,
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
    * Services
    */
   getMoviesUpcoming(): void {
+    this.isLoading = true;
     this.movieService.getMoviesUpcoming()
       .subscribe(
         res => {
@@ -40,6 +43,9 @@ export class HomeComponent implements OnInit {
         },
         error => {
           this.logService.error('getMoviesUpcoming', error);
+        },
+        () => {
+          this.isLoading = false;
         }
       );
   }

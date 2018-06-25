@@ -1,6 +1,6 @@
 <div class="container pt-5 pb-4">
 
-  <div class="media-bg">
+  <div class="media-bg" *ngIf="!isLoading">
     <ul class="list-unstyled">
       <li class="media"
           *ngFor="let movie of movieList; let first = first"
@@ -28,6 +28,10 @@
         </div>
       </li>
     </ul>
+  </div>
+
+  <div *ngIf="isLoading">
+    <mc-loader></mc-loader>
   </div>
 
   <div class="mt-4">

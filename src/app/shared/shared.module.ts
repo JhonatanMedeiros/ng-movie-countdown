@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 // Components
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 // Services
 import { MoviesService } from './services/movies.service';
@@ -19,10 +20,12 @@ import { PaginationConfig } from './components/pagination/pagination.config';
     RouterModule
   ],
   declarations: [
-    PaginationComponent
+    PaginationComponent,
+    LoaderComponent
   ],
   exports: [
-    PaginationComponent
+    PaginationComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule {

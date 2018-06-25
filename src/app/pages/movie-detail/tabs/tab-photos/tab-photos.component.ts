@@ -3,10 +3,11 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 // Models
-import { Movie } from '../../../../shared/models/movie';
+import { IMovieImage, Movie } from '../../../../shared/models/movie';
 
 // Service
 import { MoviesService } from '../../../../shared/services/movies.service';
+import { ModalImageService } from '../../../../shared/components/modal-image/modal-image.service';
 
 // Env
 import { environment } from '../../../../../environments/environment';
@@ -25,7 +26,8 @@ export class TabPhotosComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(
-    private movieService: MoviesService
+    private movieService: MoviesService,
+    private modalImage: ModalImageService
   ) { }
 
   ngOnInit() {
@@ -45,6 +47,14 @@ export class TabPhotosComponent implements OnInit, OnDestroy {
           this.movie.images = res;
         }
       );
+  }
+
+  viewImage(image: IMovieImage): void {
+    if (!image.file_path) {
+      return;
+    }
+    this.modalImage.showModal(image.file_path);
+
   }
 
 }

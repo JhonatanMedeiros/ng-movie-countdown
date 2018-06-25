@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 // Components
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ModalImageComponent } from './components/modal-image/modal-image.component';
 
 // Services
 import { MoviesService } from './services/movies.service';
@@ -13,6 +14,7 @@ import { SearchService } from './services/search.service';
 import { ConfigurationService } from './services/configuration.service';
 import { LogService } from './services/local/log.service';
 import { PaginationConfig } from './components/pagination/pagination.config';
+import { ModalImageService } from './components/modal-image/modal-image.service';
 
 @NgModule({
   imports: [
@@ -21,11 +23,13 @@ import { PaginationConfig } from './components/pagination/pagination.config';
   ],
   declarations: [
     PaginationComponent,
-    LoaderComponent
+    LoaderComponent,
+    ModalImageComponent
   ],
   exports: [
     PaginationComponent,
-    LoaderComponent
+    LoaderComponent,
+    ModalImageComponent
   ]
 })
 export class SharedModule {
@@ -37,7 +41,8 @@ export class SharedModule {
         SearchService,
         ConfigurationService,
         LogService,
-        PaginationConfig
+        PaginationConfig,
+        ModalImageService
       ]
     };
   }

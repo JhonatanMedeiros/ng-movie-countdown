@@ -8,6 +8,7 @@
         [src]="poster.file_path ? imgPosterUrl + poster.file_path : '/assets/thumb.svg'"
         class="img-thumbnail"
         [alt]="movie.original_title"
+        (click)="viewImage(poster)"
       >
     </div>
   </ng-container>
@@ -23,6 +24,7 @@
         [src]="poster.file_path ? imgPosterUrl + poster.file_path : '/assets/thumb.svg'"
         class="img-thumbnail"
         [alt]="movie.original_title"
+        (click)="viewImage(poster)"
       >
     </div>
   </ng-container>

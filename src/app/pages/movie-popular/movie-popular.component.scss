@@ -10,10 +10,16 @@
   height: 16rem;
   width: 13rem;
   transition: transform .6s;
+  -moz-transition: transform .6s;
+  -o-transition: transform .6s;
+  -webkit-transition: transform .6s;
 
   &:hover {
-    -ms-transform: scale(1.05);
     transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
   }
 
 }

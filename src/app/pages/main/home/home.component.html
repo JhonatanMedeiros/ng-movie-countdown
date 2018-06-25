@@ -1,0 +1,45 @@
+<main role="main">
+
+  <section class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Movie Countdown</h1>
+      <p class="lead text-muted">
+        O site Movie Countdown é um projeto desenvolvido por
+        <a href="https://github.com/JhonatanMedeiros">Jhonatan Hardt de Medeiros © 2018</a>.
+      </p>
+      <p class="lead text-muted">
+        "This product uses the TMDb API but is not endorsed or certified by
+        <a href="https://www.themoviedb.org/" title="The Movie Database">TMDb</a>."
+      </p>
+      <!--<p>-->
+        <!--<a href="#" class="btn btn-primary my-2">Main call to action</a>-->
+        <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+      <!--</p>-->
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+        <ng-container *ngIf="!isLoading">
+          <mc-movie-card
+            class="col-md-4"
+            *ngFor="let movie of moviesList"
+            [movie]="movie">
+          </mc-movie-card>
+        </ng-container>
+
+      </div>
+
+      <div class="row loader">
+        <ng-container *ngIf="isLoading">
+          <mc-loader></mc-loader>
+        </ng-container>
+      </div>
+
+    </div>
+  </div>
+
+</main>

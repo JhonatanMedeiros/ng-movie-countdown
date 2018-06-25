@@ -1,0 +1,54 @@
+<div class="movie-container text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-lg-4 d-none d-md-block d-lg-block d-xl-block">
+
+        <img class="movie-thumb rounded"
+             [src]="movie?.poster_path ? imgUrl + movie?.poster_path : 'assets/thumb.svg'"
+             onerror="this.src='assets/thumb.svg'"
+             [alt]="movie?.title">
+      </div>
+      <div class="col-12 col-md-6 col-lg-8">
+        <h1> {{movie?.title}}
+          <span class="lead float-right">
+            <i class="material-icons">favorite</i>
+          </span>
+        </h1>
+
+        <p>
+          <b>Data de lançamento:</b> {{movie?.release_date | date:'dd MMMM yyyy':'':'pt'}}
+        </p>
+
+        <p *ngIf="showCountDown">
+          <b>Tempo para estréia:</b>
+          {{days + 'd ' +  hours + 'h ' + minutes + 'm ' + seconds + 's'}}
+        </p>
+
+        <p>
+          <b>Sinopse</b>
+        </p>
+
+        <p>
+          {{movie?.overview}}
+        </p>
+
+        <p>
+          <b>Direção</b>
+        </p>
+        <ol class="cast-list">
+          <li class="cast-item" *ngFor="let crew of movieCrewDirectiong">
+            <p class="people">{{crew.name}}</p>
+            <p class="job">{{crew.job}}</p>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <div class="container">
+    <mc-tabs [movie]="movie"></mc-tabs>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+.card-body {
+  height: 180px;
+
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    a, a:hover {
+    color: #212529 !important;
+    text-decoration: none;
+    }
+  }
+
+  .card-text a, a:hover {
+    color: #212529 !important;
+    text-decoration: none;
+  }
+}
+
+img {
+  height: 500px;
+  transition: transform .6s;
+  -moz-transition: transform .6s;
+  -o-transition: transform .6s;
+  -webkit-transition: transform .6s;
+
+  &:hover {
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
+
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+.block-with-text {
+  @include multiLineEllipsis($lineHeight: 1.01em, $lineCount: 7, $bgColor: white);
+}
+

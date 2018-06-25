@@ -1,0 +1,43 @@
+<div class="row" *ngIf="movie.credits.cast">
+  <div class="col-12">
+    <h3>Atores</h3>
+  </div>
+  <ng-container *ngFor="let cast of movie.credits.cast">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+      <div class="card card-profile">
+        <div class="card-header card-header-image">
+          <a href (click)="false">
+            <img class="img" [src]="cast.profile_path ? imgUrl + cast.profile_path : '/assets/thumb.svg'">
+          </a>
+        </div>
+
+        <div class="card-body">
+          <h4 class="card-title">{{cast.name}}</h4>
+          <h6 class="card-category text-gray">{{cast.character}}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div class="row" *ngIf="movie.credits.crew">
+  <div class="col-12">
+    <h3>Direção</h3>
+  </div>
+  <ng-container *ngFor="let cast of movie.credits.crew">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+      <div class="card card-profile">
+        <div class="card-header card-header-image">
+          <a href (click)="false">
+            <img class="img" [src]="cast.profile_path ? imgUrl + cast.profile_path : '/assets/thumb.svg'">
+          </a>
+        </div>
+
+        <div class="card-body">
+          <h4 class="card-title">{{cast.name}}</h4>
+          <h6 class="card-category text-gray">{{cast.job}}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

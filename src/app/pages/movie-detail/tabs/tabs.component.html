@@ -1,0 +1,51 @@
+<div class="card card-nav-tabs">
+  <div class="card-header card-header-color">
+    <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ul class="nav nav-tabs" data-tabs="tabs">
+          <li class="nav-item">
+            <a class="nav-link active show" href="#info" data-toggle="tab">
+              <i class="material-icons">info</i>
+              Informações
+              <div class="ripple-container"></div></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#credits" data-toggle="tab">
+              <i class="material-icons">people</i>
+              Elenco
+              <div class="ripple-container"></div></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#videos" data-toggle="tab">
+              <i class="material-icons">videocam</i>
+              Vídeos
+              <div class="ripple-container"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#photo" data-toggle="tab">
+              <i class="material-icons">photo</i>
+              Fotos
+              <div class="ripple-container"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><div class="card-body ">
+  <div class="tab-content text-center">
+    <div class="tab-pane active show" id="info">
+      <mc-tab-info *ngIf="movie !== undefined" [movie]="movie"></mc-tab-info>
+    </div>
+    <div class="tab-pane" id="credits">
+      <mc-tab-cast *ngIf="movie !== undefined" [movie]="movie"></mc-tab-cast>
+    </div>
+    <div class="tab-pane" id="videos">
+      <mc-tab-videos *ngIf="movie !== undefined" [movie]="movie"></mc-tab-videos>
+    </div>
+    <div class="tab-pane" id="photo">
+      <mc-tab-photos *ngIf="movie !== undefined" [movie]="movie"></mc-tab-photos>
+    </div>
+  </div>
+</div></div>

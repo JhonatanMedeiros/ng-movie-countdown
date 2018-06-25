@@ -1,0 +1,60 @@
+<div class="container pt-5 pb-4">
+
+  <div class="media-bg" *ngIf="!isLoading">
+    <ul class="list-unstyled">
+      <li class="media"
+          *ngFor="let movie of movieList; let first = first"
+          [ngClass]="{'my-4': !first}"
+      >
+        <a [routerLink]="['/home/movie-detail/', movie.id]">
+          <img class="mr-3 movie-thumb"
+               [src]="imgUrl + movie.poster_path || 'assets/thumb.svg'"
+               onerror="this.src='assets/thumb.svg'"
+               [alt]="movie.title"
+               [title]="movie.title">
+        </a>
+
+        <div class="media-body">
+          <a [routerLink]="['/home/movie-detail/', movie.id]">
+            <h5 class="mt-0" [title]="movie.title">
+              {{movie.title}}
+            </h5>
+          </a>
+          <a [routerLink]="['/home/movie-detail/', movie.id]">
+            <p>
+              {{movie.overview}}
+            </p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="isLoading">
+    <mc-loader></mc-loader>
+  </div>
+
+  <div class="mt-4">
+    <!-- Pagination Component from valor-software ngx-bootstrap -->
+    <!-- https://valor-software.com/ngx-bootstrap -->
+    <mc-pagination
+      *ngIf="movieList.length"
+      [totalItems]="totalItems"
+      [itemsPerPage]="itemsPerPage"
+      [maxSize]="maxSize"
+      [rotate]="true"
+      [disabled]="isLoading"
+      [boundaryLinks]="true"
+      [firstText]="'Primeiro'"
+      [previousText]="'Anterior'"
+      [nextText]="'Próximo'"
+      [lastText]="'Último'"
+      [(ngModel)]="currentPage"
+      (pageChanged)="pageChanged($event)"
+    ></mc-pagination>
+    <!-- Pagination Component from valor-software ngx-bootstrap -->
+    <!-- https://valor-software.com/ngx-bootstrap -->
+
+  </div>
+
+</div>

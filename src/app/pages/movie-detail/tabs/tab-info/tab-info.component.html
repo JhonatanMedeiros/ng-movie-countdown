@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="col-6 text-left">
+
+    <p><b>Título original:</b>
+      {{movie?.original_title || 'N/A'}}
+    </p>
+
+    <p><b>Idioma original:</b>
+      {{movie?.original_language || 'N/A'}}
+    </p>
+
+    <p><b>Duração:</b>
+      N/A
+    </p>
+
+    <p><b>Gêneros:</b>
+      <ng-container *ngFor="let gen of movie?.genres; let isLast = last">
+        {{gen.name | uppercase}}{{!isLast ? ', ' : ''}}
+      </ng-container>
+      <ng-container *ngIf="movie?.genres.length == 0">
+        N/A
+      </ng-container>
+    </p>
+
+  </div>
+
+  <div class="col-6 text-left">
+    <p><b>Orçamento:</b>
+      {{!movie?.budget ?  'N/A' : movie?.budget | currency}}
+    </p>
+
+    <p><b>Receita:</b>
+      {{!movie?.revenue ?  'N/A' : movie?.revenue | currency}}
+    </p>
+
+    <p><b>Site oficial:</b>
+      <a [href]="movie?.homepage" *ngIf="movie?.homepage">{{movie?.homepage}}</a>
+      {{!movie?.homepage ? 'N/A': ''}}
+    </p>
+
+    <p *ngIf="movie?.external_ids">
+      <a [href]="'https://www.facebook.com/' + movie?.external_ids.facebook_id"
+          *ngIf="movie?.external_ids.facebook_id"
+      >
+        <i class="fab fa-facebook-square fa-2x"></i>
+      </a>
+      <a [href]="'https://www.instagram.com/' + movie?.external_ids.instagram_id"
+         *ngIf="movie?.external_ids.instagram_id"
+      >
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+      <a [href]="'https://www.twitter.com/' + movie?.external_ids.twitter_id"
+         *ngIf="movie?.external_ids.twitter_id"
+      >
+        <i class="fab fa-twitter fa-2x"></i>
+      </a>
+      <a [href]="'https://www.imdb.com/title/' + movie?.external_ids.imdb_id"
+         *ngIf="movie?.external_ids.imdb_id"
+      >
+        <i class="fab fa-imdb fa-2x"></i>
+      </a>
+    </p>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+h3 {
+  text-align: left;
+}
+
+img {
+  transition: transform .6s;
+  -moz-transition: transform .6s;
+  -o-transition: transform .6s;
+  -webkit-transition: transform .6s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
+}

@@ -1,0 +1,18 @@
+<div class="row" *ngIf="movie.videos.results.length;else noVideos">
+  <ng-container *ngFor="let video of movie.videos.results">
+    <div
+      class="col-12 col-sm-12"
+      [ngClass]="{'col-md-6 col-lg-6': movie.videos.results.length > 1, 'col-md-12 col-lg-12': movie.videos.results.length === 0}"
+      *ngIf="video.url"
+    >
+      <ng-container>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="video.url | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
+<ng-template #noVideos>
+  <h4>Não Existem Vídeos :(</h4>
+</ng-template>

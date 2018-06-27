@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import localePtExtra from '@angular/common/locales/extra/pt';
@@ -29,7 +30,8 @@ import { SharedModule } from './shared/shared.module';
 
 // Route Config
 import { APP_ROUTES } from './app.routes';
-import { ServiceWorkerModule } from '@angular/service-worker';
+
+// Env
 import { environment } from '../environments/environment';
 
 registerLocaleData(localePt, localePtExtra);
@@ -47,7 +49,7 @@ registerLocaleData(localePt, localePtExtra);
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, { useHash: true }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

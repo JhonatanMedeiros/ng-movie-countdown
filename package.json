@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "gh-pages": "gh-pages -d dist/movie-countdown -b gh-pages",
+    "deploy": "ng build --prod --service-worker --base-href https://jhonatanmedeiros.github.io/ng-movie-countdown/ && npm run gh-pages"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +40,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "gh-pages": "^1.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^2.0.2",

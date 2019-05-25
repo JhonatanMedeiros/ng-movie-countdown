@@ -23,9 +23,9 @@
     "@angular/platform-browser-dynamic": "^7.2.15",
     "@angular/pwa": "^0.13.9",
     "@angular/router": "^7.2.15",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "core-js": "^3.1.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "ng5-breadcrumb": "0.0.6",
     "rxjs": "^6.0.0",
     "zone.js": "^0.9.1",
@@ -51,6 +51,6 @@
     "protractor": "~5.4.2",
     "ts-node": "~8.1.1",
     "tslint": "~5.16.0",
-    "typescript": "~3.4.5"
+    "typescript": "~3.2.2"
   }
 }

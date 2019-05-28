@@ -21,7 +21,7 @@
     "@angular/http": "^7.2.15",
     "@angular/platform-browser": "^7.2.15",
     "@angular/platform-browser-dynamic": "^7.2.15",
-    "@angular/pwa": "^0.13.9",
+    "@angular/pwa": "^0.800.0",
     "@angular/router": "^7.2.15",
     "bootstrap": "^4.3.1",
     "core-js": "^3.1.2",

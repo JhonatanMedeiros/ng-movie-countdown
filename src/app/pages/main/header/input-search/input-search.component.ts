@@ -34,7 +34,7 @@ import { Movie } from '../../../../shared/models/movie';
 })
 export class InputSearchComponent implements OnInit, OnDestroy {
 
-  @ViewChild('autocompleteList') autocompleteList: ElementRef;
+  @ViewChild('autocompleteList', { static: false }) autocompleteList: ElementRef;
 
   queryField: FormControl = new FormControl();
 

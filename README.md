@@ -1,29 +1,53 @@
-# MovieCountdown
+# Ng Movie Countdown
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/JhonatanMedeiros/ng-movie-countdown.svg)](https://greenkeeper.io/)
+Ng Movie Countdown is a web application to list movies and tv shows.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
-## Development server
+## 🖥 Demo
+An example of application can be found [here](https://jhonatanmedeiros.github.io/ng-movie-countdown/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## ⌨️ Development
 
-## Code scaffolding
+### Clone Code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone git@github.com:JhonatanMedeiros/ng-movie-countdown.git
+```
 
-## Build
+### Install Dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install
+```
+> If you like [Yarn](https://yarnpkg.com/), you can also use `yarn` to install dependencies.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Development server
 
-## Running end-to-end tests
+```bash
+npm run start
+```
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Build Release
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+npm run build:prod
+```
+
+After building, the application will be found in the `dist` directory.
+
+## 🛠 Technology Stack
+
+- [Angular 9x](https://angular.io/)
+- [Bootstrap 4](https://getbootstrap.com/)
+
+
+# 🤝 Contribute [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+
+If you are interested in participating in joint development, PR and Forks are welcome!
+
+## 📜 License
+
+[MIT](https://github.com/JhonatanMedeiros/ng-movie-countdown/blob/master/LICENSE) Copyright (c) 2020 - Jhonatan Hardt de Medeiros

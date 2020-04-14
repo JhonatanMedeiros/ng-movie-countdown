@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1586825088839,
+  "timestamp": 1586825181018,
   "index": "https://jhonatanmedeiros.github.io/ng-movie-countdown/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/5.477b799d9866a307d1fa.js",
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/favicon.ico",
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/index.html",
-        "https://jhonatanmedeiros.github.io/ng-movie-countdown/main.d70f3c313f6f0fe8993b.js",
+        "https://jhonatanmedeiros.github.io/ng-movie-countdown/main.d9701dc4ef7b94ced5b1.js",
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/polyfills-es5.88e51338e9e3aff13d44.js",
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/polyfills.ea6af735e399b9217896.js",
         "https://jhonatanmedeiros.github.io/ng-movie-countdown/runtime.3bc66fd0da0343064027.js",
@@ -63,8 +63,8 @@
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/assets/thumb.svg": "df008f16ee8429b9364eb6633a3683e3a41a6be7",
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/assets/timer_white_icon.png": "bd77c7e74f2df20d0e5a412a93562c31b5b1ec0f",
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://jhonatanmedeiros.github.io/ng-movie-countdown/index.html": "421696001ed7e4cdec43e2eafbc97710830e5d36",
-    "https://jhonatanmedeiros.github.io/ng-movie-countdown/main.d70f3c313f6f0fe8993b.js": "96a78b61f722994fbf5719f7ca99f5688b983a87",
+    "https://jhonatanmedeiros.github.io/ng-movie-countdown/index.html": "d40bc3ec4eeb3e3ec2453c2212814218a1c6465e",
+    "https://jhonatanmedeiros.github.io/ng-movie-countdown/main.d9701dc4ef7b94ced5b1.js": "51a4d13c80b53757feb0f54f5a5cd15bc6ec5f46",
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/polyfills-es5.88e51338e9e3aff13d44.js": "d579f086e6369e2976d5e4afdf8789d3239c59a3",
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/polyfills.ea6af735e399b9217896.js": "00d68f6bec8622ed1a323563d0a30dd7a541895c",
     "https://jhonatanmedeiros.github.io/ng-movie-countdown/runtime.3bc66fd0da0343064027.js": "72b8f69bfbe011d53022d0d8391925d58946e02e",

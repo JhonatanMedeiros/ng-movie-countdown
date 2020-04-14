@@ -12,7 +12,7 @@ export const APP_ROUTES: Routes = [
       { path: '', component: HomeComponent  },
       { path: 'about', component: AboutComponent  },
       { path: 'movie-popular', component: MoviePopularComponent },
-      { path: 'movie-detail',  loadChildren: './pages/movie-detail/movie-detail.module#MovieDetailModule' }
+      { path: 'movie-detail',  loadChildren: () => import('./pages/movie-detail/movie-detail.module').then(m => m.MovieDetailModule) }
     ]
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full'}

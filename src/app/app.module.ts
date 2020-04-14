@@ -9,9 +9,6 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import localePtExtra from '@angular/common/locales/extra/pt';
 
-// External Libs
-import { BreadcrumbService, Ng5BreadcrumbModule } from 'ng5-breadcrumb';
-
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/main/header/header.component';
@@ -53,12 +50,10 @@ registerLocaleData(localePt, localePtExtra);
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng5BreadcrumbModule.forRoot(),
     SharedModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    BreadcrumbService,
     Title,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
   ],

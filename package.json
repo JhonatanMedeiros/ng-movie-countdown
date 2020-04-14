@@ -1,6 +1,26 @@
 {
   "name": "movie-countdown",
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "private": false,
+  "description": "Ng Movie Countdown is a web application to list movies and tv shows.",
+  "keywords": [
+    "angular",
+    "typescript",
+    "javascript",
+    "themoviedb",
+    "movie",
+    "tv-shows"
+  ],
+  "license": "MIT",
+  "author": "Jhonatan Hardt de Medeiros",
+  "homepage": "https://jhonatanmedeiros.github.io/ng-movie-countdown/",
+  "bugs": {
+    "url": "https://github.com/JhonatanMedeiros/ng-movie-countdown/issues"
+  },
+  "repository": {
+    "url": "git+https://github.com/JhonatanMedeiros/ng-movie-countdown.git",
+    "type": "git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +31,6 @@
     "gh-pages": "gh-pages -d dist/movie-countdown -b gh-pages",
     "deploy": "ng build --prod --service-worker --base-href https://jhonatanmedeiros.github.io/ng-movie-countdown/ && npm run gh-pages"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^9.1.1",
     "@angular/common": "^9.1.1",

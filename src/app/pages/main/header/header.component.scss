@@ -6,13 +6,3 @@
 .navbar-brand, .nav-item {
   cursor: pointer;
 }
-
-/deep/ .breadcrumb {
-  li {
-    cursor: pointer;
-  }
-  .active {
-    cursor: default !important;
-  }
-}
-
